@@ -69,7 +69,7 @@ public class map extends AppCompatActivity implements OnMapReadyCallback{
         googleMap.setMyLocationEnabled(true);
         MarkerOptions m1 = new MarkerOptions();
         m1.position(new LatLng(food.lat, food.lon));
-        m1.title(food.name);
+        m1.title(food.name + '\n' + "地址" + food.addr + '\n' + "電話" + food.tel);
         m1.draggable(true);
         googleMap.addMarker(m1);
         /*LocationManager locationManager = (LocationManager) getApplication().getSystemService(Context.LOCATION_SERVICE);
