@@ -90,7 +90,7 @@ public class mrttime extends AppCompatActivity {
         private int view;
 
         public myAdapter(String[] items, int view) {
-            this.items = items; //將車站初始化為傳入的陣列
+            this.items = items; //將車站jason初始化為傳入的陣列
             this.view = view;   //將layout的id設為傳入的id
         }
 

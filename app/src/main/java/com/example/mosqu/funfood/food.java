@@ -517,14 +517,7 @@ class Foods {
 
         mrt.setText(str1);
         tim.setText(str2);
-/*
-        for (int i = 0; i < foods.length; i++) {
-            if ((foods[i].stat.equals(str1) && (foods[i].time.equals(str2)))) {
-                adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, foods[i].foods);
-                listview.setAdapter(adapter);
-            }
-        }
-        */
+
         for(int i = 0; i < foods2List.size(); i++) {
             if(foods2List.get(i).stat.equals(str1)&&foods2List.get(i).time.equals(str2)) {
                 foods2 = foods2List.get(i);
@@ -542,12 +535,11 @@ class Foods {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Food food = foods2.foods.get(position);
-                //Food food = foods2List.get(0).foods.get(0);
-                Intent intent = new Intent(food.this, map.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("json", new Gson().toJson(food));
-                intent.putExtras(bundle);
-                startActivity(intent);
+               Intent intent = new Intent(food.this, map.class);
+               Bundle bundle = new Bundle();
+               bundle.putString("json", new Gson().toJson(food));
+               intent.putExtras(bundle);
+               startActivity(intent);
             }
         });
     }

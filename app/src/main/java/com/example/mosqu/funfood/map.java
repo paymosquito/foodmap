@@ -69,17 +69,9 @@ public class map extends AppCompatActivity implements OnMapReadyCallback{
         googleMap.setMyLocationEnabled(true);
         MarkerOptions m1 = new MarkerOptions();
         m1.position(new LatLng(food.lat, food.lon));
-        m1.title(food.name + '\n' + "地址" + food.addr + '\n' + "電話" + food.tel);
+        m1.title(food.addr);
         m1.draggable(true);
         googleMap.addMarker(m1);
-        /*LocationManager locationManager = (LocationManager) getApplication().getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
-        Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(location.getLatitude(), location.getLongitude()))
-                .zoom(12.8f)
-                .build();
-*/
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(food.lat, food.lon), 12.8f));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(food.lat, food.lon), 15f));
     }
 }
